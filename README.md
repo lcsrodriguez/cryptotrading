@@ -2,8 +2,39 @@
 
 ## Overview
 
+- Academic project with financial datasets based on [G-Research Crypto Forecasting](https://www.kaggle.com/competitions/g-research-crypto-forecasting).
 
-Academic project with financial datasets based on [G-Research Crypto Forecasting](https://www.kaggle.com/competitions/g-research-crypto-forecasting).
+
+## Getting started
+
+0. Clone the repository
+```bash
+git clone git@github.com:lcsrodriguez/cryptotrading.git
+cd cryptotrading/
+```
+
+1. Check the file architecture of the project
+```
+.
+├── README.md
+├── data
+│   ├── asset_details.csv
+│   ├── example_test.csv
+│   ├── supplemental_train.csv
+│   └── train.csv
+├── main.ipynb
+└── requirements.txt
+```
+
+2. Download the pre-requirements modules
+```bash
+pip3 -r requirements.txt
+```
+
+3. Execute the Jupyter environment
+```
+jupyter-notebook .
+```
 
 ## License
 
