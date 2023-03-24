@@ -1,3 +1,6 @@
+TA-Lib
+yfinance
+pandas-datareader
 matplotlib
 pandas
 numpy
