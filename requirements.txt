@@ -1,3 +1,4 @@
+scikit-plot
 TA-Lib
 yfinance
 pandas-datareader
