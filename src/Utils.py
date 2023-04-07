@@ -1,6 +1,7 @@
 import glob
 import matplotlib.pyplot as plt
 import warnings
+import numpy as np
 import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
@@ -26,6 +27,7 @@ class Utils:
     TRADING_ACTIVITY = ["Count"]
     VWAP = ["VWAP"]
     TARGET = ["Target"]
+    ALL_COLUMNS = TRADING_ACTIVITY + OHLCV + VWAP
 
     # Data filenames
     DATA_FILENAMES = glob.glob("data/*.csv")
