@@ -17,13 +17,19 @@ cd cryptotrading/
 ```
 .
 ├── README.md
+├── assets
+│   ├── csv
+│   └── parquet
 ├── data
-│   ├── asset_details.csv
-│   ├── example_test.csv
-│   ├── supplemental_train.csv
-│   └── train.csv
+│   ├── asset_details.csv
+│   ├── example_test.csv
+│   ├── supplemental_train.csv
+│   └── train.csv
 ├── main.ipynb
-└── requirements.txt
+├── processing.ipynb
+├── requirements.txt
+└── src
+    └── Utils.py
 ```
 
 2. Download the pre-requirements modules

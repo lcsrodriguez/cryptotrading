@@ -1,4 +1,6 @@
 .DS_Store
 data/*.csv
+assets/csv/*.csv
+assets/parquet/*.parquet
 .ipynb_checkpoints/
 __pycache__/
