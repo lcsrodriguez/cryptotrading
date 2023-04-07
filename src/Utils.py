@@ -9,6 +9,9 @@ import seaborn as sns
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import missingno as msn
+import sys
+import os
+
 
 # Setting default parameters
 plt.rcParams["figure.figsize"] = [12, 5] # Figure sizes for Matplotlib 
@@ -17,9 +20,14 @@ plt.rcParams["axes.prop_cycle"] = plt.cycler(color=["blue", "green", "red", "ora
 # Silencing all warnings for a better UX
 warnings.filterwarnings("ignore")
 
+
 class Utils:
     """Class Utils
     """
+
+    # Folders
+    DATA_FOLDER = "../data"
+    ASSETS_FOLDER = "../assets"
 
     # Column labels
     OHLC = ["Open", "High", "Low", "Close"]
@@ -30,10 +38,10 @@ class Utils:
     ALL_COLUMNS = TRADING_ACTIVITY + OHLCV + VWAP
 
     # Data filenames
-    DATA_FILENAMES = glob.glob("data/*.csv")
+    DATA_FILENAMES = glob.glob(f"{DATA_FOLDER}/*.csv")
 
     # Asset details
-    ASSET_DETAILS = pd.read_csv(filepath_or_buffer="data/asset_details.csv", index_col="Asset_ID")
+    ASSET_DETAILS = pd.read_csv(filepath_or_buffer=f"{DATA_FOLDER}/asset_details.csv", index_col="Asset_ID")
     
     # Asset ids
     ASSET_IDS = sorted(list(ASSET_DETAILS.index))
@@ -43,10 +51,10 @@ class Utils:
 
     # Filenames hashmap for better user handling
     FILENAMES = {
-        "ASSET_DETAILS": "data/asset_details.csv",
-        "TRAIN_2": "data/supplemental_train.csv",
-        "TRAIN": "data/train.csv",
-        "TEST": "data/example_test.csv"
+        "ASSET_DETAILS": f"{DATA_FOLDER}/asset_details.csv",
+        "TRAIN_2": f"{DATA_FOLDER}/supplemental_train.csv",
+        "TRAIN": f"{DATA_FOLDER}/train.csv",
+        "TEST": f"{DATA_FOLDER}/example_test.csv"
     }
 
     @staticmethod
