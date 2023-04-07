@@ -2,6 +2,8 @@ import glob
 import matplotlib.pyplot as plt
 import warnings
 import pandas as pd
+import pyarrow as pa
+import pyarrow.parquet as pq
 
 # Setting default parameters
 plt.rcParams["figure.figsize"] = [12, 5] # Figure sizes for Matplotlib 
