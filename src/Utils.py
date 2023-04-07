@@ -33,6 +33,14 @@ class Utils:
     # Asset names
     ASSET_NAMES = sorted(list(ASSET_DETAILS["Asset_Name"].to_numpy()))
 
+    # Filenames hashmap for better user handling
+    FILENAMES = {
+        "ASSET_DETAILS": "data/asset_details.csv",
+        "TRAIN_2": "data/supplemental_train.csv",
+        "TRAIN": "data/train.csv",
+        "TEST": "data/example_test.csv"
+    }
+
     @staticmethod
     def check_number_asset_files(complete_package: bool = False) -> bool:
         """Function checking whether we have the good number of files
