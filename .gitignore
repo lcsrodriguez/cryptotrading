@@ -4,3 +4,5 @@ assets/csv/*.csv
 assets/parquet/*.parquet
 .ipynb_checkpoints/
 __pycache__/
+out/*
+!out/.gitkeep
