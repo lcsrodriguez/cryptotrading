@@ -95,3 +95,21 @@ class Utils:
             raise Exception(f"The given asset id is unknown\nPlease use one from: {Utils.ASSET_IDS}")
         
         return Utils.ASSET_DETAILS["Asset_Name"][asset_id]
+    
+    @staticmethod
+    def get_daytime_range(x: int) -> int:
+        """
+        Function returning a coded version of daytime range
+        """
+        if (x > 4) and (x <= 8):
+            return 0 # Early Morning
+        elif (x > 8) and (x <= 12 ):
+            return 1 # Morning
+        elif (x > 12) and (x <= 16):
+            return 2 # Noon
+        elif (x > 16) and (x <= 20) :
+            return 3 # Eve
+        elif (x > 20) and (x <= 24):
+            return 4 # Night
+        elif (x <= 4):
+            return 5 # Night
