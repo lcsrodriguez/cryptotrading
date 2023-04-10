@@ -1,5 +1,7 @@
 .DS_Store
 data/*.csv
+*.csv
+*.html
 assets/csv/*.csv
 assets/parquet/*.parquet
 .ipynb_checkpoints/
