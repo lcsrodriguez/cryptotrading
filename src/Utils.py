@@ -8,6 +8,7 @@ import pyarrow.parquet as pq
 import seaborn as sns
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from plotly_resampler import FigureResampler, FigureWidgetResampler
 import missingno as msn
 import talib as ta
 import sys
