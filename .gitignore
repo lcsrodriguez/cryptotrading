@@ -1,3 +1,4 @@
+notebooks/model_*
 .DS_Store
 data/*.csv
 *.csv
