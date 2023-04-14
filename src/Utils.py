@@ -12,8 +12,10 @@ from plotly_resampler import FigureResampler, FigureWidgetResampler
 import missingno as msn
 import talib as ta
 import sys
+import time
 import os
-
+from xgboost import XGBClassifier
+from sklearn.model_selection import train_test_split, TimeSeriesSplit
 
 # Setting default parameters
 plt.rcParams["figure.figsize"] = [12, 5] # Figure sizes for Matplotlib 
