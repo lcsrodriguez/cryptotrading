@@ -26,7 +26,9 @@ warnings.filterwarnings("ignore")
 
 
 class Utils:
-    """Class Utils
+    """
+    Class Utils containing several global variables (as arrays, dictionnaries), functions, static methods
+    to handle the dataset in one unique way
     """
 
     # Folders
