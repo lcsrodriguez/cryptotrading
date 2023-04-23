@@ -8,3 +8,4 @@ assets/parquet/*.parquet
 .ipynb_checkpoints/
 __pycache__/
 !out/.gitkeep
+out/models/model_*

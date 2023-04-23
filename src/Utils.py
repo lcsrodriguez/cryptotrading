@@ -14,6 +14,7 @@ import talib as ta
 import sys
 import time
 import os
+import tqdm
 from xgboost import XGBClassifier
 from sklearn.model_selection import train_test_split, TimeSeriesSplit
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
