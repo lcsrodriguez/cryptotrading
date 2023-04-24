@@ -129,3 +129,38 @@ class Utils:
             return 4 # Night
         elif (x <= 4):
             return 5 # Night
+        
+    @staticmethod
+    def rsi(df: pd.DataFrame, periods = 10, ema = True) -> pd.Series:
+        """
+        Returns a pd.Series with the Relative Strength Index (RSI)
+        ==> Technical analysis indicator (see report)
+        """
+        # Computing the Close price delta
+        close_delta = df["Close"].diff()
+
+        # Make two series: one for lower closes and one for higher closes
+        up = close_delta.clip(lower=0)
+        down = -1 * close_delta.clip(upper=0)
+        
+        if ema == True:
+            # Use exponential moving average
+            ma_up = up.ewm(com = periods - 1, adjust=True, min_periods = periods).mean()
+            ma_down = down.ewm(com = periods - 1, adjust=True, min_periods = periods).mean()
+        else:
+            # Use simple moving average
+            ma_up = up.rolling(window = periods, adjust=False).mean()
+            ma_down = down.rolling(window = periods, adjust=False).mean()
+        
+        # Computing the RSI
+        rsi = ma_up / ma_down
+        rsi = 100 - (100/(1 + rsi))
+        return rsi
+    
+    @staticmethod
+    def get_preds_time_interval(preds_: pd.DataFrame) -> dict:
+        """
+        Function returning start and end datetimes from predictions
+        """
+        i = list(preds_.index)
+        return {"start_dt": i[0], "end_dt": i[-1]}
