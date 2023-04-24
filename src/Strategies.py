@@ -91,8 +91,8 @@ class Custom(Strategy):
         current_preds = self.preds.loc[current_dt][self.ONLY_PREDS_COLUMNS]
         
         # Computing potential future trends for short and long terms
-        short_term = current_preds[:self.HORIZON_LAG_FUTURE["future"]//2].sum() # For the 5 first next times
-        long_term = current_preds[self.HORIZON_LAG_FUTURE["future"]//2:].sum() # For the 5 last next times
+        short_term = current_preds[:self.HORIZON_LAG_FUTURE//2].sum() # For the 5 first next times
+        long_term = current_preds[self.HORIZON_LAG_FUTURE//2:].sum() # For the 5 last next times
         
         # Computing number of UP/DOWN predictions on whole time horizon
         whole_term_up = np.array(short_term + long_term) # For the 10 next times (aggregation ==> sum)
