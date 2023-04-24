@@ -13,4 +13,4 @@ plotly==5.11.0
 fastparquet==0.8.3
 pyarrow==9.0.0
 plotly-resampler==0.8.3.2
-tqdm==4.64.0
+tqdm==4.65.0
