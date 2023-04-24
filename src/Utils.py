@@ -20,8 +20,12 @@ from sklearn.model_selection import train_test_split, TimeSeriesSplit
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.metrics import confusion_matrix, classification_report
 from xgboost import *
+import pandas_ta as tap
+import xgboost
 import time
 import datetime
+from backtesting import Backtest, Strategy
+from backtesting.lib import crossover, resample_apply
 
 # Setting default parameters
 plt.rcParams["figure.figsize"] = [12, 5] # Figure sizes for Matplotlib 
