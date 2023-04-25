@@ -2,7 +2,7 @@ scikit-plot==0.3.7
 scikit-learn==1.1.2
 TA-Lib==0.4.25
 yfinance==0.2.1
-pandas==1.5.3
+pandas==2.0.1
 pandas-datareader==0.10.0
 matplotlib==3.5.3
 numpy==1.23.5
