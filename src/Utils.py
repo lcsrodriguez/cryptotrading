@@ -1,6 +1,10 @@
+# Silencing all warnings for a better UX
+import warnings
+warnings.filterwarnings("ignore")
+
+# Importing necessary modules
 import glob
 import matplotlib.pyplot as plt
-import warnings
 import numpy as np
 import pandas as pd
 import pyarrow as pa
@@ -28,11 +32,10 @@ from backtesting import Backtest, Strategy
 from backtesting.lib import crossover, resample_apply
 
 # Setting default parameters
-plt.rcParams["figure.figsize"] = [12, 5] # Figure sizes for Matplotlib 
+plt.rcParams["figure.figsize"] = [10, 4] # Figure sizes for Matplotlib 
 plt.rcParams["axes.prop_cycle"] = plt.cycler(color=["blue", "green", "red", "orange", "purple", "magenta"]) # Color for plotting
 
-# Silencing all warnings for a better UX
-warnings.filterwarnings("ignore")
+
 
 
 class Utils:
