@@ -30,6 +30,7 @@ import time
 import datetime
 from backtesting import Backtest, Strategy
 from backtesting.lib import crossover, resample_apply
+from abc import ABC, abstractmethod
 
 # Setting default parameters
 plt.rcParams["figure.figsize"] = [10, 4] # Figure sizes for Matplotlib 
@@ -169,3 +170,7 @@ class Utils:
         """
         i = list(preds_.index)
         return {"start_dt": i[0], "end_dt": i[-1]}
+    
+    @staticmethod
+    def MovingAverage(closes:pd.Series, n:int) -> pd.Series:
+        return pd.Series(closes).rolling(n).mean()

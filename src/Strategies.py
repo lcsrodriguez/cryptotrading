@@ -1,8 +1,30 @@
 from .Utils import *
+from .TradingStrategy import *
 
+class BuyAndHold(Strategy, TradingStrategy):
+    """Buy And Hold (BH) trading strategy
+
+    Args:
+        Strategy (class): Strategy class from the module `backtesting`
+        TradingStrategy (class): TradingStrategy class from the project's sources
+    """
+    pass
+
+class DollarCostAverage(Strategy, TradingStrategy):
+    """Dollar Cost Average (DCA) trading strategy
+
+    Args:
+        Strategy (class): Strategy class from the module `backtesting`
+        TradingStrategy (class): TradingStrategy class from the project's sources
+    """
+    pass
+
+# Aliases
+BH = BuyAndHold
+DCA = DollarCostAverage
 
 # Defining the strategy
-class RsiOscillator(Strategy):
+class RsiOscillator(Strategy, TradingStrategy):
     """
     Class Strategy
     """
@@ -41,17 +63,13 @@ class RsiOscillator(Strategy):
             self.buy()
 
 
-def MovingAverage(closes:pd.Series, n:int) -> pd.Series:
-    return pd.Series(closes).rolling(n).mean()
-            
-            
-class SmaCross(Strategy):
+class SmaCross(Strategy, TradingStrategy):
     sma_fast = 12
     sma_slow = 24
     
     def init(self):
-        self.sma1 = self.I(MovingAverage, self.data.Close, self.sma_fast)
-        self.sma2 = self.I(MovingAverage, self.data.Close, self.sma_slow)
+        self.sma1 = self.I(Utils.MovingAverage, self.data.Close, self.sma_fast)
+        self.sma2 = self.I(Utils.MovingAverage, self.data.Close, self.sma_slow)
 
     def next(self):
         if self.position and crossover(self.sma1, self.sma2):
@@ -59,16 +77,24 @@ class SmaCross(Strategy):
         elif self.position and crossover(self.sma2, self.sma1):
             self.position.close()
 
-class Custom(Strategy):
+
+class Custom(Strategy, TradingStrategy):
+    """Implementation of a custom trading strategy
+
+    Args:
+        Strategy (class): Strategy class from the module `backtesting`
+        TradingStrategy (class): TradingStrategy class from the project's sources
+    """
     def init(self):
         """
         Initialize the strategy
         """
+
         # To pass additional data, write it here or overload the Backtest class to pass 
         # via the _strategy member, any additional information
         
-        #self.sma1 = self.I(MovingAverage, self.data.Close, 12)
-        #self.sma2 = self.I(MovingAverage, self.data.Close, 24)
+        #self.sma1 = self.I(Utils.MovingAverage, self.data.Close, 12)
+        #self.sma2 = self.I(Utils.MovingAverage, self.data.Close, 24)
         #self.daily_rsi = self.I(tap.rsi, pd.Series(self.data.Close), 3)
         self.HORIZON_LAG_FUTURE = 10
         self.ONLY_PREDS_COLUMNS = [str(k) for k in list(range(1, self.HORIZON_LAG_FUTURE + 1))]
@@ -100,7 +126,6 @@ class Custom(Strategy):
         #print(f"U{whole_term_up}/D{whole_term_down}")
         
         # Implementation of the trading strategy
-        # TODO
         if whole_term_up > 5:
             #print("BUY")
             self.buy()
