@@ -38,6 +38,7 @@ plt.rcParams["axes.prop_cycle"] = plt.cycler(color=["blue", "green", "red", "ora
 
 a = xgboost.Booster()
 a.load_model(fname="dd")
+a.predict()
 
 class Utils:
     """

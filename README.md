@@ -11,6 +11,17 @@
 
 ## Overview
 
+This academic project follows the below outline:
+
+1. Personal skill development on crypto-currencies trading and algorithmic trading techniques
+2. State-of-the-art of most common trading strategies on BTC
+3. Implementation of a custom trading strategy on BTC
+4. Backtest of the given trading strategy (on at least 200 trades)
+5. Use of transfer learning to extend our strategy on other crypto-currencies
+
+For ML/DL, we have used **XGBoost** and **LSTM** models to forecast future market movements (*binary classification*).
+
+
 Academic project with financial datasets based on [G-Research Crypto Forecasting](https://www.kaggle.com/competitions/g-research-crypto-forecasting) Kaggle competition.
 
 
