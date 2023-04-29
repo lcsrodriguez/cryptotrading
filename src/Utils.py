@@ -36,7 +36,8 @@ plt.rcParams["figure.figsize"] = [10, 4] # Figure sizes for Matplotlib
 plt.rcParams["axes.prop_cycle"] = plt.cycler(color=["blue", "green", "red", "orange", "purple", "magenta"]) # Color for plotting
 
 
-
+a = xgboost.Booster()
+a.load_model(fname="dd")
 
 class Utils:
     """
