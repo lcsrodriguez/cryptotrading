@@ -7,6 +7,8 @@
 
 **Workflows**: ![](https://img.shields.io/badge/Dependabot-enabled-blue)
 
+**Project homepage**: [lcsrodriguez.github.io/qf/ml](https://lcsrodriguez.github.io/qf/ml)
+
 ## Overview
 
 Academic project with financial datasets based on [G-Research Crypto Forecasting](https://www.kaggle.com/competitions/g-research-crypto-forecasting) Kaggle competition.
