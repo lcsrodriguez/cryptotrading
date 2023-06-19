@@ -5,7 +5,7 @@ yfinance==0.2.1
 pandas==1.5.3
 pandas-datareader==0.10.0
 matplotlib==3.5.3
-numpy==1.23.5
+numpy==1.25.0
 scipy==1.9.1
 missingno==0.5.1
 seaborn==0.12.0
